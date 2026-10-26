@@ -14,6 +14,7 @@ from tf_transformations import euler_from_quaternion
 
 
 def clamp(value, low, high):
+    """Limit value to the range"""
     return max(low, min(high, value))
 
 
@@ -56,13 +57,16 @@ class HolonomicObstacleWallFollower(Node):
             self.declare_parameter('alignment_gain', 2.0).value
         )
 
+        # each LiDAR region is also a state of the state machine
         self.RIGHT = 'RIGHT'
         self.FRONT = 'FRONT'
         self.FRONT_RIGHT = 'FRONT_RIGHT'
         self.BACK_RIGHT = 'BACK_RIGHT'
 
         self.diagonal_factor = 0.5
+        # number of consecutive scans needed to confirm a region change
         self.region_confirmations = 3
+        # number of nearest rays averaged per region
         self.robust_rays = 3
 
         self.state = self.RIGHT
@@ -77,6 +81,7 @@ class HolonomicObstacleWallFollower(Node):
         self.region_candidate_count = 0
         self.stable_region = None
 
+        # ROS communication
         self.create_subscription(
             LaserScan, '/scan', self.scan_callback, qos_profile_sensor_data
         )
@@ -122,6 +127,7 @@ class HolonomicObstacleWallFollower(Node):
             if distance < scan.range_min or distance > scan.range_max:
                 continue
 
+            # Angle of ray i, normalised to [-pi, pi]
             angle = scan.angle_min + i * scan.angle_increment
             angle = math.atan2(math.sin(angle), math.cos(angle))  # [-pi, pi]
             angle_deg = math.degrees(angle)
