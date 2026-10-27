@@ -125,10 +125,10 @@
       <plugin filename="EntityTree" name="Entity tree"/>
     </gui>
 
-    <!-- Models -->  
-    <!-- Here we add all the models with <include> to create the world -->
-    <!-- We are going to make a square shape of 3.6 x 3.6 m, centered at the same point than the one of the example (0.7, 0) but this time using walls 6 of 60cm in each side  --> 
-    <!-- The walls that are on the y axis have yaw = 1.57 -->
+    <!-- Models -->
+    <!-- Here, we add all the models using <include> to create the world. -->
+    <!-- We are going to create a square area measuring 3.6 x 3.6 m, centered at the same point as in the example (0.7, 0), but this time using six walls, each 60 cm long, on each side. -->
+    <!-- The walls along the y-axis have a yaw of 1.57 rad. -->
 
     <!-- Superior side -->
     <!-- Wall60cm 1 -->
