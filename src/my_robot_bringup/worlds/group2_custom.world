@@ -19,7 +19,9 @@
             name="ignition::gazebo::systems::SceneBroadcaster"/>
 
     <plugin filename="libignition-gazebo6-sensors-system.so"
-            name="ignition::gazebo::systems::Sensors"/>
+            name="ignition::gazebo::systems::Sensors">
+        <render_engine>ogre2</render_engine>        
+    </plugin>
 
     <!-- Scene configuration -->
     <scene>
@@ -123,5 +125,184 @@
       <plugin filename="EntityTree" name="Entity tree"/>
     </gui>
 
-  </world>
+    <!-- Models -->  
+    <!-- Here we add all the models with <include> to create the world -->
+    <!-- We are going to make a square shape of 3.6 x 3.6 m, centered at the same point than the one of the example (0.7, 0) but this time using walls 6 of 60cm in each side  --> 
+    <!-- The walls that are on the y axis have yaw = 1.57 -->
+
+    <!-- Superior side -->
+    <!-- Wall60cm 1 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_1</name>
+    <pose> -0.8 1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 2 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_2</name>
+    <pose> -0.2 1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 3 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_3</name>
+    <pose> 0.4 1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 4 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_4</name>
+    <pose> 1 1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 5 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_5</name>
+    <pose> 1.6 1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 6 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_6</name>
+    <pose> 2.2 1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Inferior side -->
+    <!-- Wall60cm 7 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_7</name>
+    <pose> -0.8 -1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 8 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_8</name>
+    <pose> -0.2 -1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 9 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_9</name>
+    <pose> 0.4 -1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 10 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_10</name>
+    <pose> 1 -1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 11 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_11</name>
+    <pose> 1.6 -1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Wall60cm 12 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_12</name>
+    <pose> 2.2 -1.8 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Right side -->
+    <!-- Wall60cm 13 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_13</name>
+    <pose> 2.5 -1.5 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 14 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_14</name>
+    <pose> 2.5 -0.9 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 15 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_15</name>
+    <pose> 2.5 -0.3 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 16 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_16</name>
+    <pose> 2.5 0.3 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 17 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_17</name>
+    <pose> 2.5 0.9 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 18 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_18</name>
+    <pose> 2.5 1.5 0.15 0 0 1.57</pose>
+    </include>
+
+    
+    <!-- Left side -->
+    <!-- Wall60cm 19 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_19</name>
+    <pose> -1.1 -1.5 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 20 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_20</name>
+    <pose> -1.1 -0.9 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 21 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_21</name>
+    <pose> -1.1 -0.3 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 22 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_22</name>
+    <pose> -1.1 0.3 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 23 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_23</name>
+    <pose> -1.1 0.9 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- Wall60cm 24 -->
+    <include>
+    <uri>model://wall60cm</uri>
+    <name>wall60_24</name>
+    <pose> -1.1 1.5 0.15 0 0 1.57</pose>
+    </include>
+
+    </world>
+
 </sdf>
