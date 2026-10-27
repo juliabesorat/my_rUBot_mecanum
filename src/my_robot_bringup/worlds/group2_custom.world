@@ -303,6 +303,31 @@
     <pose> -1.1 1.5 0.15 0 0 1.57</pose>
     </include>
 
+    <!-- Obstacle -->
+    <!-- The obstacle extends along the x-axis from 0.6 to 1.5 m and along the y-axis from -0.6 to 0.6 m, allowing the robot to pass through the entire space with margins greater than 0.9 m. -->
+    <!-- A wall90cm 1 -->
+    <include>
+    <uri>model://wall120cm</uri>
+    <name>wall120_1</name>
+    <pose>0.6 0.45 0.15 0 0 1.57</pose>
+    </include>
+
+    <!-- A wall90cm 1 -->
+    <include>
+    <uri>model://wall90cm</uri>
+    <name>wall90_1</name>
+    <pose>1.05 -0.6 0.15 0 0 0</pose>
+    </include>
+
+    <!-- Stop Sign -->
+    <include>
+    <uri>model://sign_stop_ign</uri>
+    <pose>0.5 -0.6 0 0 0 1.57</pose>
+    </include>
+
+
+
+
     </world>
 
 </sdf>
