@@ -33,7 +33,9 @@ class TrafficSignNavigation(Node):
         self.accept_sign = False
 
         # TODO 1: Create a String subscriber for /traffic_sign.
-        self.sign_subscriber = None
+        self.sign_subscriber = self.create_subscription(String,'/traffic_sign', self.sign_callback,10)
+        #'/traffic_sign' és el nom del topic on es publica la senyal
+        # self.sign_callback és la funció que s'executarà cada cop que arribi un missatge
 
     def sign_callback(self, msg):
         # TODO 2: While accept_sign is True, store the sign in lower case.
