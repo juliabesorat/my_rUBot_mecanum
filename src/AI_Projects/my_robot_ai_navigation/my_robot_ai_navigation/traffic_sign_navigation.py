@@ -114,3 +114,11 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+
+# In part 4 of activity 6 we have proven that the modified files actually make the robot navigate as desired:
+# The turn left command causes the robot to take the left path towards the final position.
+# The turn right command causes the robot to take the right path towards the final position.
+# The stop command causes the robot to wait a few seconds and take the shortest path towards the final positions, which happens to be the same as the left path.
+
+
